@@ -29,10 +29,10 @@ class ProductCategoryRepositoryTest {
 
     @Test
     public void saveTest() {
-        ProductCategory productCategory = new ProductCategory();
-        productCategory.setCategoryId(2);
-        productCategory.setCategoryName("女士最爱");
-        productCategory.setCategoryType(3);
+
+        ProductCategory productCategory = repository.findById(2).orElse(null);
+        productCategory.setCategoryType(10);
+
         repository.save(productCategory);
     }
 }
