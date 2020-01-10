@@ -1,10 +1,9 @@
 package com.example.sell.VO;
 
 import lombok.Data;
-import java.io.Serializable;
 
 @Data
-public class ResultVO {
+public class ResultVO<T> {
 
     /* error code */
     private Integer code;
@@ -14,5 +13,4 @@ public class ResultVO {
 
     /* contents */
     private T data;
-
 }

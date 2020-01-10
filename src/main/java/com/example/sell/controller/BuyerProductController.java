@@ -1,5 +1,6 @@
 package com.example.sell.controller;
 
+import com.example.sell.VO.ResultVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +15,8 @@ customer products
 public class BuyerProductController {
 
     @GetMapping("/list")
-    public void list() {
-
-
+    public ResultVO list() {
+        ResultVO resultVO = new ResultVO();
+        return resultVO;
     }
 }
