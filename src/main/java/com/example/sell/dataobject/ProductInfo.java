@@ -9,7 +9,6 @@ public class ProductInfo {
 
     @Id
     private String productId;
-
     /* */
     private String productName;
 

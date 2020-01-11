@@ -2,7 +2,7 @@ package com.example.sell.VO;
 
 import lombok.Data;
 
-@Data
+@Data //This annotation is like getter/setter is already done
 public class ResultVO<T> {
 
     /* error code */

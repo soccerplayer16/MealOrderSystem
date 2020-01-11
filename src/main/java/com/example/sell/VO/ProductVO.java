@@ -3,7 +3,9 @@ package com.example.sell.VO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-@Data
+import java.util.List;
+
+@Data //This annotation is like getter/setter is already done
 public class ProductVO {
     // product including category
 
@@ -13,7 +15,8 @@ public class ProductVO {
     @JsonProperty("type")
     private Integer categoryType;
 
-    @JsonProperty()
+    @JsonProperty("foods")
+    private List<ProductInfoVO> productInfoVOSList;
 
 
 
