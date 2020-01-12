@@ -22,7 +22,7 @@ public class OrderDetail {
 
     private BigDecimal productPrice;
 
-    private Integer product_quantity;
+    private Integer productQuantity;
 
     private String productIcon;
 

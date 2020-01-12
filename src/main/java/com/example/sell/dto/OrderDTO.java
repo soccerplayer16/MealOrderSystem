@@ -1,0 +1,35 @@
+package com.example.sell.dto;
+
+import com.example.sell.dataobject.OrderDetail;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+@Data
+public class OrderDTO {
+
+    private String orderId;
+    private String buyerName;
+    private String buyerPhone;
+    private String buyerAddress;
+    private String buyerOpenid;
+    private BigDecimal orderAmount;
+
+    /**
+     * order status, default is NEW order
+     */
+    private Integer orderStatus;
+
+    /**
+     * payment status, default is WAIT to pay
+     */
+    private Integer payStatus;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    private List<OrderDetail> orderDetailList;
+}

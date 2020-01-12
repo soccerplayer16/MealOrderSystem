@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
@@ -15,17 +17,17 @@ import java.math.BigDecimal;
 
 class OrderMasterRepositoryTest {
 
-    private static final String OPENID = "110110";
+    private static final String OPENID = "091634212";
     @Autowired
     private OrderMasterRepository repository;
 
     @Test
     public void saveTest() {
         OrderMaster orderMaster = new OrderMaster();
-        orderMaster.setOrderId("1234567");
-        orderMaster.setBuyerName("lolood");
-        orderMaster.setBuyerPhone("18576649086");
-        orderMaster.setBuyerAddress("wuhan hongshanqu");
+        orderMaster.setOrderId("29382");
+        orderMaster.setBuyerName("Joe Joe");
+        orderMaster.setBuyerPhone("23123129319");
+        orderMaster.setBuyerAddress("San Jose");
         orderMaster.setBuyerOpenid(OPENID);
         orderMaster.setOrderAmount(new BigDecimal(2.5));
 
@@ -36,18 +38,9 @@ class OrderMasterRepositoryTest {
     @Test
     public void findByBuyerOpenid() throws Exception {
 
+        PageRequest request = PageRequest.of(0, 1);
+
+        Page<OrderMaster> result = repository.findByBuyerOpenid(OPENID, request);
+        System.out.println(result.getContent().size());
     }
-
-//        OrderMaster orderMaster = new OrderMaster();
-//        orderMaster.setOrderId("123456");
-//        orderMaster.setBuyerName("Xiao Yan");
-//        orderMaster.setBuyerPhone("123456789123");
-//        orderMaster.setBuyerAddress("SanJose");
-//        orderMaster.setBuyerOpenid("110");
-//        orderMaster.setOrderAmount(new BigDecimal(10));
-//
-//        OrderMaster result = repository.save(orderMaster);
-//        Assert.assertNotNull(result);
-//    }
-
 }
