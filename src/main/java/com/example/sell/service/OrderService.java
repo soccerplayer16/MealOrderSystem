@@ -22,8 +22,8 @@ public interface OrderService {
      */
     Page<OrderDTO> findList(String buyerOpenid, Pageable pageable);
 
-    Page<OrderDTO> findListAll(Pageable pageable);
-
+//    Page<OrderDTO> findListAll(Pageable pageable);
+//
     /**
      * cancel an order
      */

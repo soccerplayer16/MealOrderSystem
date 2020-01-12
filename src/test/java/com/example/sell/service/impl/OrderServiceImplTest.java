@@ -2,12 +2,16 @@ package com.example.sell.service.impl;
 
 import com.example.sell.dataobject.OrderDetail;
 import com.example.sell.dto.OrderDTO;
+import com.example.sell.enums.OrderStatusEnum;
+import com.example.sell.enums.PayStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -24,7 +28,7 @@ public class OrderServiceImplTest {
 
     private final String BUYER_OPENID = "1101110";
 
-    private final String ORDERID = "1234567";
+    private final String ORDERID = "157880414410816305";
 
     @Test
     public void create() throws Exception {
@@ -55,49 +59,48 @@ public class OrderServiceImplTest {
         Assert.assertNotNull(result);
     }
 
-//    @Test
-//    public void findOne() throws Exception {
-//        OrderDTO result = orderService.findOne(ORDERID);
-//        log.info("【查询单个订单】result={}", result);
-//        Assert.assertEquals(ORDERID, result.getOrderId());
-//    }
-//
-//    @Test
-//    public void findList() throws Exception {
-//        PageRequest request = new PageRequest(0, 2);
-//        Page<OrderDTO> orderDTOPage = orderService.findList(BUYER_OPENID, request);
-//        Assert.assertNotEquals(0, orderDTOPage.getTotalElements());
-//    }
-//
+    @Test
+    public void findOne() throws Exception {
+        OrderDTO result = orderService.findOne(ORDERID);
+        log.info("【查询单个订单】result={}", result);
+        Assert.assertEquals(ORDERID, result.getOrderId());
+    }
+
+    @Test
+    public void findList() throws Exception {
+        PageRequest request = PageRequest.of(0, 2);
+        Page<OrderDTO> orderDTOPage = orderService.findList(BUYER_OPENID, request);
+        Assert.assertNotEquals(0, orderDTOPage.getTotalElements());
+    }
+
 //    @Test
 //    public void findListAll() throws Exception {
-//        PageRequest request = new PageRequest(0, 2);
+//        PageRequest request = PageRequest.of(0, 2);
 //        Page<OrderDTO> orderDTOPage = orderService.findListAll(request);
 //        Assert.assertNotEquals(0, orderDTOPage.getTotalElements());
 //    }
 //
 //
-//    @Test
-//    public void cancel() throws Exception {
-//        OrderDTO orderDTO = orderService.findOne(ORDERID);
-//        OrderDTO result = orderService.cancel(orderDTO);
-//        Assert.assertEquals(OrderStatusEnum.CANCEL.getCode(), result.getOrderStatus());
-//    }
-//
-//    @Test
-//    public void finish() throws Exception {
-//        OrderDTO orderDTO = orderService.findOne(ORDERID);
-//        OrderDTO result = orderService.finish(orderDTO);
-//        Assert.assertEquals(OrderStatusEnum.FINISHED.getCode(), result.getOrderStatus());
-//
-//    }
-//
-//    @Test
-//    public void paid() throws Exception {
-//
-//        OrderDTO orderDTO = orderService.findOne(ORDERID);
-//        OrderDTO result = orderService.paid(orderDTO);
-//        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
-//    }
+    @Test
+    public void cancel() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDERID);
+        OrderDTO result = orderService.cancel(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.CANCEL.getCode(), result.getOrderStatus());
+    }
+
+    @Test
+    public void finish() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDERID);
+        OrderDTO result = orderService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISHED.getCode(), result.getOrderStatus());
+
+    }
+
+    @Test
+    public void paid() throws Exception {
+        OrderDTO orderDTO = orderService.findOne(ORDERID);
+        OrderDTO result = orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
+    }
 
 }
