@@ -3,10 +3,10 @@ package com.example.sell.enums;
 import lombok.Getter;
 
 @Getter
-public enum OrderStatusEnum {
-    NEW(0,"New order"),
-    FINISHED(1, "Finished"),
-    CANCEL(2,"CANCELLED"),
+public enum OrderStatusEnum implements CodeEnum{
+    NEW(0,"NEW"),
+    FINISHED(1, "FINISHED"),
+    CANCEL(2,"CANCEL"),
     ;
 
     private Integer code;
@@ -16,4 +16,14 @@ public enum OrderStatusEnum {
         this.code = code;
         this.message = message;
     }
+
+//    public static OrderStatusEnum getOrderStatusEnum(Integer code) {
+//        for (OrderStatusEnum orderStatusEnum : OrderStatusEnum.values()) {
+//            if (orderStatusEnum.getCode().equals(code)) {
+//                return orderStatusEnum;
+//            }
+//
+//        }
+//        return null;
+//    }
 }

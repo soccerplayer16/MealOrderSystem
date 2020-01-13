@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum ResultEnum {
 
     PARAM_ERROR(1, "form contents are not correct"),
-    ORDER_NOT_EXIST(2, "order does not exist"),,
+    ORDER_CANCEL_SUCCESS(2, "order cancellation success"),
 
     PRODUCT_NOT_EXIST(10, "does not exist"),
     PRODUCT_STOCK_ERROR(11,"stock is not enough"),

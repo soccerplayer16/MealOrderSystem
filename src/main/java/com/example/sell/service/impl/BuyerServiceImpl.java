@@ -18,8 +18,8 @@ public class BuyerServiceImpl implements BuyerService {
 
     /// look for an order ///
     @Override
-    public OrderDTO findOrderOne(String openid, String orderId) {
-        return checkOrderOwner(openid, orderId);
+    public OrderDTO findOrderOne(String openId, String orderId) {
+        return checkOrderOwner(openId, orderId);
     }
 
     /// cancel an order ///
@@ -34,14 +34,14 @@ public class BuyerServiceImpl implements BuyerService {
         return orderService.cancel(orderDTO);
     }
 
-    private OrderDTO checkOrderOwner(String openid, String orderId) {
+    private OrderDTO checkOrderOwner(String openId, String orderId) {
         OrderDTO orderDTO = orderService.findOne(orderId);
         if (orderDTO == null) {
             return null;
         }
         //judge whether the openid matches with openid in db, then do the order query service
-        if (!orderDTO.getBuyerOpenid().equalsIgnoreCase(openid)) {
-            log.error("【查询订单】订单的openid不一致. openid={}, orderDTO={}", openid, orderDTO);
+        if (!orderDTO.getBuyerOpenid().equalsIgnoreCase(openId)) {
+            log.error("【查询订单】订单的openid不一致. openid={}, orderDTO={}", openId, orderDTO);
             throw new SellException(ResultEnum.ORDER_OWNER_ERROR);
         }
         return orderDTO;

@@ -3,11 +3,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://192.168.0.45/sell?characterEncoding=utf-8&useSSL=false #database server is at virtual machine!
+    url: jdbc:mysql://192.168.0.48/sell?characterEncoding=utf-8&useSSL=false #database server is at virtual machine!
   jpa:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+  freemarker:
+    suffix: .ftl
 
 #server is my local machine# 127.0.0.1 OR 192.168.0.17
 server:

@@ -6,6 +6,7 @@ import com.example.sell.dto.OrderDTO;
 import com.example.sell.enums.ResultEnum;
 import com.example.sell.exception.SellException;
 import com.example.sell.form.OrderForm;
+import com.example.sell.service.BuyerService;
 import com.example.sell.service.OrderService;
 import com.example.sell.utils.ResultVOUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -30,8 +31,8 @@ public class BuyerOrderController {
     @Autowired
     private OrderService orderService;
 
-//    @Autowired
-//    private BuyerService buyerService;
+    @Autowired
+    private BuyerService buyerService;
 
     //Create order
     @PostMapping(value = "/create")
@@ -72,30 +73,29 @@ public class BuyerOrderController {
     }
 
     @GetMapping("detail")
-    public ResultVO<OrderDTO> detail(@RequestParam(value = "openid") String openid,
-                                     @RequestParam("orderId") String orderId) {
+    public ResultVO<OrderDTO> detail(@RequestParam(value = "openid") String openId,
+                                     @RequestParam(value = "orderid") String orderId) {
 
-        if (StringUtils.isEmpty(openid) || StringUtils.isEmpty(orderId)) {
+        if (StringUtils.isEmpty(openId) || StringUtils.isEmpty(orderId)) {
             log.error("【查询订单列表】openid为空");
             throw new SellException(ResultEnum.PARAM_ERROR);
         }
 
-        //TODO change to buyerService
-        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
+        // change to buyerService
+        OrderDTO orderDTO = buyerService.findOrderOne(openId, orderId);
         return ResultVOUtil.success(orderDTO);
     }
 
     //取消订单
     @PostMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
-                           @RequestParam("orderId") String orderId) {
-        //TODO 验证订单是否为自己的
+                           @RequestParam("orderid") String orderId) {
+        // check whether the order is this owner's
         if (StringUtils.isEmpty(openid) || StringUtils.isEmpty(orderId)) {
             log.error("【查询订单列表】openid为空");
             throw new SellException(ResultEnum.PARAM_ERROR);
         }
 
-        //TODO
         buyerService.cancelOrder(openid, orderId);
         return ResultVOUtil.success();
     }
