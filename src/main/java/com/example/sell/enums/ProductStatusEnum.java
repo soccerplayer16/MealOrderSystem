@@ -1,11 +1,9 @@
 package com.example.sell.enums;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
+public enum ProductStatusEnum implements CodeEnum{
 
-public enum ProductStatusEnum {
-
-    UP(0, "Sale"),
-    DOWN(1, "Out of stock");
+    UP(0, "OnSale"),
+    DOWN(1, "DownSale");
 
     private Integer code;
     private String message;
