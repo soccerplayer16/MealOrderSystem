@@ -1,5 +1,7 @@
 package com.example.sell.dataobject;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -9,6 +11,7 @@ each object is one row in database!
  */
 @Entity
 @Table(name = "product_category")
+@Data
 public class ProductCategory {
 
     /* catagory id */

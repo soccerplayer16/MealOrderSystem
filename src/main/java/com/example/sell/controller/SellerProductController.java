@@ -115,6 +115,7 @@ public class SellerProductController {
             }
             else {
                 form.setProductId(KeyUtil.genUniqueKey());//generate productId for the new product!
+                form.setProductStatus(1);
             }
             BeanUtils.copyProperties(form, productInfo);
             productService.save(productInfo);
@@ -126,6 +127,5 @@ public class SellerProductController {
 
         map.put("url", "/sell/seller/product/list");
         return new ModelAndView("common/success", map);
-
     }
 }

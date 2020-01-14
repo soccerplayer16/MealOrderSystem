@@ -21,6 +21,8 @@ public class ProductForm {
     // small image of a product //
     private String productIcon;
 
+    private Integer productStatus;
+
     private Integer categoryType;
 
     private Date createTime;
