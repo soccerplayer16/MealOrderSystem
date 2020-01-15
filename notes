@@ -1,2 +1,6 @@
 If vertual machine's IP is changed, what needs to be done?
 (1) application.yml : database server address  (2) On VM: vim /usr/local/nginx/conf/nginx.conf
+
+
+Tools used:
+(1) http://www.ibootstrap.cn ==> a quick way to generate front end html codes
