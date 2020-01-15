@@ -4,9 +4,9 @@ import com.example.sell.dto.OrderDTO;
 
 public interface BuyerService {
 
-    //查询一个订单
+    //query one order
     OrderDTO findOrderOne(String openid, String orderId);
 
-    //取消订单
+    //cancel an order
     OrderDTO cancelOrder(String openid, String orderId);
 }
