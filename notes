@@ -1,2 +1,17 @@
 If vertual machine's IP is changed, what needs to be done?
 (1) application.yml : database server address  (2) On VM: vim /usr/local/nginx/conf/nginx.conf
+
+
+Tools used:
+(1) http://www.ibootstrap.cn ==> a quick way to generate front end html codes
+(2) Database viewer : Sequel Pro
+(3) Interacting with REST APIs: Postman
+
+
+
+
+Instructive references:
+https://medium.com/javarevisited/rest-api-using-spring-boot-part-2-adding-model-service-controller-and-dao-implementation-697284b4ff38
+
+
+https://www.youtube.com/watch?v=F2L24Cy4zkQ&t=45s
