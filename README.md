@@ -12,5 +12,6 @@ Java, Spring Boot, MySQL, Redis, Nginx, RESTful APIs,
 
 ## Overall Architecture of the Project
 
-![Overall Architecture]
-()
+![Overall Architecture](/OverallStructure.png)
+
+
