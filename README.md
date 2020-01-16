@@ -40,7 +40,7 @@ This projects are divided into multiple layers.
 ##
 ## Database Design (seller part)
 
-![Database Design](/DatabaseDesign.png | width = 48)
+![Database Design](/DatabaseDesign.png)
 
 
 
