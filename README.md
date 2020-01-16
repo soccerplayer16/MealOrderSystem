@@ -21,11 +21,26 @@ The RESTful requests will be directed to Tomcat servers (locally hosted on my la
 
 
 
+
+
+##
 ## Project Class/Object Structure Design
 
-This projects are divided into multiple layers. 
+This projects are divided into multiple layers.
+(1) HTTP Requests will be directed and controlled by the "Controller" layer.
+(2) The logic of dealing with requests is mainly done through "Service" layer.
+(3) "Service" layer will check Redis cache or interact with Database through "Repository" layer.
+(4) The data that is transferred to database is packed in a "Data Transfer Object" (DTO) and each piece of database information is maintained in the "Data Access Object" (DAO).
+
 
 ![Project Structure](/ProjectStructureDesign.png)
+
+
+
+##
+## Database Design (seller part)
+
+![Database Design](/DatabaseDesign.png)
 
 
 
