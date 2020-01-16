@@ -1,3 +1,16 @@
 # MealOrderSystem
 
-Trying to build a meal order system with Spring Boot Framework. Mainly focused on Seller Order Management Part.
+## Project Goal
+Design a *Meal Order System* using Spring Boot Framework
+
+
+
+## Tools/Knowledge explored and employed
+Java, Spring Boot, MySQL, Redis, Nginx, RESTful APIs,
+
+
+
+## Overall Architecture of the Project
+
+![Overall Architecture]
+()
