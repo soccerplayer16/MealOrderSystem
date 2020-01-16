@@ -33,14 +33,14 @@ This projects are divided into multiple layers.
 (4) The data that is transferred to database is packed in a "Data Transfer Object" (DTO) and each piece of database information is maintained in the "Data Access Object" (DAO).
 
 
-![Project Structure](/ProjectStructureDesign.png | width = 48)
+![Project Structure](/ProjectStructureDesign.png)
 
 
 
 ##
 ## Database Design (seller part)
 
-![Database Design](/DatabaseDesign.png){:height="50%" width="50%"}
+![Database Design](/DatabaseDesign.png | width = 48)
 
 
 
